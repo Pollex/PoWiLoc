@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "firmware_main"
+		},
+		{
+			"path": "firmware_radio"
+		}
+	]
+}
