@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name powiloc-custom)(type Legacy)(uri ${KIPRJMOD}/powiloc-custom.lib)(options "")(descr ""))
+)
