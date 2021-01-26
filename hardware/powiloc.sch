@@ -30,7 +30,7 @@ U 1 1 600B4186
 P 4200 5900
 F 0 "U5" H 4700 7500 50  0000 R CNN
 F 1 "328p_radio" H 4850 7400 50  0000 R CNN
-F 2 "Package_DIP:DIP-28_W7.62mm" H 4200 5900 50  0001 C CIN
+F 2 "Package_DIP:DIP-28_W7.62mm_Socket" H 4200 5900 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 4200 5900 50  0001 C CNN
 	1    4200 5900
 	1    0    0    -1  
@@ -117,7 +117,7 @@ U 1 1 600AFA85
 P 1800 5900
 F 0 "U4" H 2100 7500 50  0000 R CNN
 F 1 "328p_main" H 2650 7400 50  0000 R CNN
-F 2 "Package_DIP:DIP-28_W7.62mm" H 1800 5900 50  0001 C CIN
+F 2 "Package_DIP:DIP-28_W7.62mm_Socket" H 1800 5900 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 1800 5900 50  0001 C CNN
 	1    1800 5900
 	1    0    0    -1  
@@ -127,7 +127,7 @@ I2C_SCL
 Text GLabel 2400 6000 2    50   Input ~ 0
 I2C_SDA
 Text GLabel 2400 6200 2    50   Input ~ 0
-NRST
+NRST_MAIN_MCU
 $Comp
 L Device:R_Small R8
 U 1 1 600C9858
@@ -139,8 +139,6 @@ F 3 "~" H 4050 2250 50  0001 C CNN
 	1    4050 2250
 	1    0    0    -1  
 $EndComp
-Text GLabel 4100 2400 2    50   Input ~ 0
-NRST
 Wire Wire Line
 	4050 2350 4050 2400
 Wire Wire Line
@@ -150,7 +148,7 @@ L Switch:SW_SPST SW2
 U 1 1 600D2850
 P 3750 2400
 F 0 "SW2" H 3750 2635 50  0000 C CNN
-F 1 "SW_RST" H 3750 2544 50  0000 C CNN
+F 1 "SW_MAIN_RST" H 3750 2544 50  0000 C CNN
 F 2 "Button_Switch_THT:SW_PUSH_6mm" H 3750 2400 50  0001 C CNN
 F 3 "~" H 3750 2400 50  0001 C CNN
 	1    3750 2400
@@ -175,22 +173,20 @@ Wire Wire Line
 Text Notes 3450 1850 0    50   ~ 0
 Main Reset button
 Wire Notes Line
-	4450 2650 3400 2650
-Wire Notes Line
 	3400 1750 3400 2650
 Wire Notes Line
-	4450 1750 4450 2650
+	4850 1750 4850 2650
 Text Notes 7400 7500 0    50   ~ 0
 PoWi Locator
 $Comp
 L Switch:SW_SPST SW1
 U 1 1 600D956E
-P 4850 2400
-F 0 "SW1" H 4850 2635 50  0000 C CNN
-F 1 "SW_TRIG" H 4850 2544 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 4850 2400 50  0001 C CNN
-F 3 "~" H 4850 2400 50  0001 C CNN
-	1    4850 2400
+P 5250 2400
+F 0 "SW1" H 5250 2635 50  0000 C CNN
+F 1 "SW_TRIG" H 5250 2544 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 5250 2400 50  0001 C CNN
+F 3 "~" H 5250 2400 50  0001 C CNN
+	1    5250 2400
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -199,7 +195,7 @@ U 1 1 600E22E1
 P 9300 1150
 F 0 "U2" H 9100 1300 50  0000 L CNN
 F 1 "USB Conn" H 9100 1200 50  0000 L CNN
-F 2 "" H 9300 1100 50  0001 C CNN
+F 2 "powiloc-custom:USBPCB" H 9300 1100 50  0001 C CNN
 F 3 "" H 9300 1100 50  0001 C CNN
 	1    9300 1150
 	1    0    0    -1  
@@ -399,7 +395,7 @@ U 1 1 601579E9
 P 1700 1100
 F 0 "Q1" V 1949 1100 50  0000 C CNN
 F 1 "IRF740" V 2040 1100 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 1950 1025 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown" H 1950 1025 50  0001 L CIN
 F 3 "http://www.vishay.com/docs/91054/91054.pdf" H 1700 1100 50  0001 L CNN
 	1    1700 1100
 	0    1    1    0   
@@ -495,7 +491,7 @@ F 3 "" H 4200 7400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4800 6200 2    50   Input ~ 0
-NRST
+NRST_RADIO_MCU
 Text GLabel 4800 6100 2    50   Input ~ 0
 I2C_SCL
 Text GLabel 4800 6000 2    50   Input ~ 0
@@ -548,17 +544,17 @@ RADIO_DIO1
 Text GLabel 4800 7000 2    50   Input ~ 0
 RADIO_DIO2
 Text GLabel 6750 5000 0    50   Input ~ 0
-RADIO_SCK
+SPI_SCK
 Text GLabel 4800 5200 2    50   Input ~ 0
-RADIO_SCK
+SPI_SCK
 Text GLabel 4800 5100 2    50   Input ~ 0
-RADIO_MISO
+SPI_MISO
 Text GLabel 6750 5200 0    50   Input ~ 0
-RADIO_MISO
+SPI_MISO
 Text GLabel 4800 5000 2    50   Input ~ 0
-RADIO_MOSI
+SPI_MOSI
 Text GLabel 6750 5100 0    50   Input ~ 0
-RADIO_MOSI
+SPI_MOSI
 Text GLabel 6750 5300 0    50   Input ~ 0
 RADIO_NSS
 Text GLabel 4800 4900 2    50   Input ~ 0
@@ -567,31 +563,17 @@ Text GLabel 4800 4800 2    50   Input ~ 0
 RADIO_RST
 Text GLabel 6750 5500 0    50   Input ~ 0
 RADIO_RST
-Text GLabel 2400 5200 2    50   Input ~ 0
-MAIN_SCK
-Text GLabel 2400 5100 2    50   Input ~ 0
-MAIN_MISO
-Text GLabel 2400 5000 2    50   Input ~ 0
-MAIN_MOSI
 $Comp
 L Connector_Generic:Conn_02x03_Odd_Even J2
 U 1 1 600E0A6D
 P 10350 1000
 F 0 "J2" H 10400 1317 50  0000 C CNN
-F 1 "328p_main_ISP" H 10400 1226 50  0000 C CNN
+F 1 "MCU_ISP" H 10400 1226 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 10350 1000 50  0001 C CNN
 F 3 "~" H 10350 1000 50  0001 C CNN
 	1    10350 1000
 	1    0    0    -1  
 $EndComp
-Text GLabel 10150 1000 0    50   Input ~ 0
-MAIN_SCK
-Text GLabel 10150 900  0    50   Input ~ 0
-MAIN_MISO
-Text GLabel 10650 1000 2    50   Input ~ 0
-MAIN_MOSI
-Text GLabel 10150 1100 0    50   Input ~ 0
-NRST
 $Comp
 L power:GND #PWR0112
 U 1 1 600E4912
@@ -603,25 +585,6 @@ F 3 "" H 10850 1150 50  0001 C CNN
 	1    10850 1150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_02x03_Odd_Even J3
-U 1 1 600E690C
-P 10350 1600
-F 0 "J3" H 10400 1917 50  0000 C CNN
-F 1 "328p_radio_ISP" H 10400 1826 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 10350 1600 50  0001 C CNN
-F 3 "~" H 10350 1600 50  0001 C CNN
-	1    10350 1600
-	1    0    0    -1  
-$EndComp
-Text GLabel 10150 1700 0    50   Input ~ 0
-NRST
-Text GLabel 10150 1500 0    50   Input ~ 0
-RADIO_MISO
-Text GLabel 10650 1600 2    50   Input ~ 0
-RADIO_MOSI
-Text GLabel 10150 1600 0    50   Input ~ 0
-RADIO_SCK
 Wire Wire Line
 	10850 1100 10850 1150
 Wire Wire Line
@@ -642,7 +605,7 @@ U 1 1 6010B134
 P 8350 5000
 F 0 "J8" H 8100 5250 50  0000 L CNN
 F 1 "radio_ant_conn**" H 8100 5150 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_132134-16_Vertical" H 8350 5000 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 8350 5000 50  0001 C CNN
 F 3 " ~" H 8350 5000 50  0001 C CNN
 	1    8350 5000
 	1    0    0    -1  
@@ -664,7 +627,7 @@ U 1 1 6011BBAB
 P 4250 1200
 F 0 "J4" H 4100 1550 50  0000 L CNN
 F 1 "neo_gps_conn" H 4100 1450 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4250 1200 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 4250 1200 50  0001 C CNN
 F 3 "~" H 4250 1200 50  0001 C CNN
 	1    4250 1200
 	1    0    0    -1  
@@ -689,9 +652,9 @@ Wire Wire Line
 Wire Wire Line
 	4000 1100 4000 1050
 Text GLabel 4000 1200 0    50   Input ~ 0
-GPS_RX
+MAIN_TX
 Text GLabel 4000 1300 0    50   Input ~ 0
-GPS_TX
+MAIN_RX
 Wire Wire Line
 	4000 1200 4050 1200
 Wire Wire Line
@@ -708,7 +671,7 @@ U 1 1 6012DBF0
 P 9150 2700
 F 0 "J5" H 9000 3050 50  0000 L CNN
 F 1 "oled_conn" H 9000 2950 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 9150 2700 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 9150 2700 50  0001 C CNN
 F 3 "~" H 9150 2700 50  0001 C CNN
 	1    9150 2700
 	1    0    0    -1  
@@ -748,51 +711,51 @@ Wire Wire Line
 	7750 5000 8150 5000
 Text GLabel 4800 5800 2    50   Input ~ 0
 RADIO_DIO5
-Text GLabel 5100 2100 1    50   Input ~ 0
+Text GLabel 5500 2100 1    50   Input ~ 0
 3.3V
 $Comp
 L Device:R_Small R6
 U 1 1 6014170E
-P 5100 2250
-F 0 "R6" H 5050 2200 50  0000 R CNN
-F 1 "10k" H 5050 2300 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 5100 2250 50  0001 C CNN
-F 3 "~" H 5100 2250 50  0001 C CNN
-	1    5100 2250
+P 5500 2250
+F 0 "R6" H 5450 2200 50  0000 R CNN
+F 1 "10k" H 5450 2300 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 5500 2250 50  0001 C CNN
+F 3 "~" H 5500 2250 50  0001 C CNN
+	1    5500 2250
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	5100 2100 5100 2150
+	5500 2100 5500 2150
 Wire Wire Line
-	5100 2400 5050 2400
+	5500 2400 5450 2400
 $Comp
 L power:GND #PWR03
 U 1 1 60147581
-P 4600 2450
-F 0 "#PWR03" H 4600 2200 50  0001 C CNN
-F 1 "GND" H 4450 2350 50  0000 C CNN
-F 2 "" H 4600 2450 50  0001 C CNN
-F 3 "" H 4600 2450 50  0001 C CNN
-	1    4600 2450
+P 5000 2450
+F 0 "#PWR03" H 5000 2200 50  0001 C CNN
+F 1 "GND" H 4850 2350 50  0000 C CNN
+F 2 "" H 5000 2450 50  0001 C CNN
+F 3 "" H 5000 2450 50  0001 C CNN
+	1    5000 2450
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	4650 2400 4600 2400
+	5050 2400 5000 2400
 Wire Wire Line
-	4600 2400 4600 2450
+	5000 2400 5000 2450
 Wire Wire Line
-	5100 2350 5100 2400
-Text GLabel 5150 2400 2    50   Input ~ 0
+	5500 2350 5500 2400
+Text GLabel 5550 2400 2    50   Input ~ 0
 TRIG_BTN
 Text GLabel 2400 5800 2    50   Input ~ 0
 TRIG_BTN
 Wire Wire Line
-	5150 2400 5100 2400
-Connection ~ 5100 2400
-Text Notes 5100 1850 2    50   ~ 0
+	5550 2400 5500 2400
+Connection ~ 5500 2400
+Text Notes 5500 1850 2    50   ~ 0
 Trigger button
 Wire Notes Line
-	4500 1750 5600 1750
+	4900 1750 6000 1750
 $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 60157CEE
@@ -847,9 +810,9 @@ Wire Notes Line
 Text GLabel 2400 5700 2    50   Input ~ 0
 PWR_SW
 Text GLabel 2400 6500 2    50   Input ~ 0
-GPS_RX
+MAIN_TX
 Text GLabel 2400 6400 2    50   Input ~ 0
-GPS_TX
+MAIN_RX
 Text Notes 3400 3950 0    50   ~ 0
 Radio MCU
 Text GLabel 2400 5900 2    50   Input ~ 0
@@ -922,8 +885,6 @@ I2C Bus
 Wire Notes Line
 	1900 1750 3350 1750
 Wire Notes Line
-	3400 1750 4450 1750
-Wire Notes Line
 	6000 1700 4700 1700
 Wire Notes Line
 	4700 550  6000 550 
@@ -961,7 +922,7 @@ U 1 1 602036C8
 P 5400 1150
 F 0 "Q2" V 5649 1150 50  0000 C CNN
 F 1 "IRF740" V 5740 1150 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5650 1075 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown" H 5650 1075 50  0001 L CIN
 F 3 "http://www.vishay.com/docs/91054/91054.pdf" H 5400 1150 50  0001 L CNN
 	1    5400 1150
 	0    1    1    0   
@@ -979,11 +940,11 @@ Wire Notes Line
 Wire Notes Line
 	1900 1750 1900 2650
 Wire Notes Line
-	4500 2650 5600 2650
+	4900 2650 6000 2650
 Wire Notes Line
-	5600 1750 5600 2650
+	6000 1750 6000 2650
 Wire Notes Line
-	4500 1750 4500 2650
+	4900 1750 4900 2650
 Wire Notes Line
 	7500 550  7500 2000
 Wire Notes Line
@@ -1029,7 +990,7 @@ Wire Wire Line
 	6950 2450 7100 2450
 Wire Wire Line
 	7500 2450 7650 2450
-Text GLabel 7550 2650 0    50   Input ~ 0
+Text GLabel 7050 2650 0    50   Input ~ 0
 SW_LED_STAT
 Wire Wire Line
 	7850 2450 7900 2450
@@ -1074,19 +1035,13 @@ Wire Wire Line
 	8150 2450 8150 2650
 Wire Wire Line
 	8100 2650 8150 2650
-Wire Wire Line
-	7550 2650 7650 2650
 Text Notes 6850 2150 0    50   ~ 0
 LEDs*
 Connection ~ 8150 2650
 Wire Notes Line
-	6800 2050 8250 2050
-Wire Notes Line
 	8250 2050 8250 2950
 Wire Notes Line
-	8250 2950 6800 2950
-Wire Notes Line
-	6800 2950 6800 2050
+	6400 2950 6400 2050
 Text GLabel 2400 7100 2    50   Input ~ 0
 SW_LED_STAT
 $Comp
@@ -1138,7 +1093,6 @@ NoConn ~ 4800 5400
 NoConn ~ 4800 5600
 NoConn ~ 4800 5700
 NoConn ~ 4800 6400
-NoConn ~ 4800 6500
 NoConn ~ 4800 6600
 NoConn ~ 4800 6700
 NoConn ~ 4800 6800
@@ -1154,23 +1108,6 @@ NoConn ~ 3600 4700
 NoConn ~ 1200 4700
 Text GLabel 10650 900  2    50   Input ~ 0
 VBUS
-Text GLabel 10650 1500 2    50   Input ~ 0
-VBUS
-$Comp
-L power:GND #PWR0113
-U 1 1 6024C554
-P 10850 1750
-F 0 "#PWR0113" H 10850 1500 50  0001 C CNN
-F 1 "GND" H 10855 1577 50  0000 C CNN
-F 2 "" H 10850 1750 50  0001 C CNN
-F 3 "" H 10850 1750 50  0001 C CNN
-	1    10850 1750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10650 1700 10850 1700
-Wire Wire Line
-	10850 1700 10850 1750
 Wire Wire Line
 	2100 850  2100 950 
 Wire Wire Line
@@ -1197,28 +1134,6 @@ Wire Wire Line
 Connection ~ 1450 1300
 Wire Wire Line
 	1450 1300 1450 1350
-$Comp
-L Connector_Generic:Conn_01x01 J9
-U 1 1 6026A7DB
-P 750 2950
-F 0 "J9" H 850 2850 50  0000 C CNN
-F 1 "BAT+" H 700 2850 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 750 2950 50  0001 C CNN
-F 3 "~" H 750 2950 50  0001 C CNN
-	1    750  2950
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x01 J10
-U 1 1 60270825
-P 750 3150
-F 0 "J10" H 850 3050 50  0000 C CNN
-F 1 "BAT-" H 700 3050 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 750 3150 50  0001 C CNN
-F 3 "~" H 750 3150 50  0001 C CNN
-	1    750  3150
-	-1   0    0    1   
-$EndComp
 Text GLabel 1050 3150 2    50   Input ~ 0
 BAT-
 Text GLabel 1050 2950 2    50   Input ~ 0
@@ -1234,8 +1149,6 @@ F 3 "~" H 1000 2950 50  0001 C CNN
 	1    1000 2950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	950  2950 1000 2950
 Wire Wire Line
 	850  1200 1050 1200
 Wire Wire Line
@@ -1328,4 +1241,189 @@ Wire Notes Line
 	9450 2050 9450 3000
 Wire Notes Line
 	11150 3000 11150 2050
+$Comp
+L Switch:SW_SPST SW4
+U 1 1 6024A7E5
+P 7300 2650
+F 0 "SW4" H 7350 2450 50  0000 C CNN
+F 1 "SW_LED_STAT" H 7200 2550 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7300 2650 50  0001 C CNN
+F 3 "~" H 7300 2650 50  0001 C CNN
+	1    7300 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 2650 7650 2650
+Wire Wire Line
+	7100 2650 7050 2650
+Text GLabel 2400 5200 2    50   Input ~ 0
+SPI_SCK
+Text GLabel 2400 5100 2    50   Input ~ 0
+SPI_MISO
+Text GLabel 2400 5000 2    50   Input ~ 0
+SPI_MOSI
+Text GLabel 10150 1000 0    50   Input ~ 0
+SPI_SCK
+Text GLabel 10150 900  0    50   Input ~ 0
+SPI_MISO
+Text GLabel 10650 1000 2    50   Input ~ 0
+SPI_MOSI
+Wire Notes Line
+	6400 2050 8250 2050
+Wire Notes Line
+	6400 2950 8250 2950
+Text GLabel 10100 1600 2    50   Input ~ 0
+NRST_MAIN_MCU
+Text GLabel 10100 1400 2    50   Input ~ 0
+NRST_RADIO_MCU
+$Comp
+L Connector_Generic:Conn_01x03 J3
+U 1 1 6032DFC0
+P 9800 1500
+F 0 "J3" H 9800 1800 50  0000 C CNN
+F 1 "SW_ISP_MCU" H 9750 1700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 9800 1500 50  0001 C CNN
+F 3 "~" H 9800 1500 50  0001 C CNN
+	1    9800 1500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10000 1400 10100 1400
+Wire Wire Line
+	10000 1600 10100 1600
+Wire Wire Line
+	10000 1500 10050 1500
+Wire Wire Line
+	10050 1500 10050 1100
+Wire Wire Line
+	10050 1100 10150 1100
+Text GLabel 4100 3350 2    50   Input ~ 0
+NRST_RADIO_MCU
+Text GLabel 4100 2400 2    50   Input ~ 0
+NRST_MAIN_MCU
+$Comp
+L Device:R_Small R13
+U 1 1 60342BB0
+P 4050 3200
+F 0 "R13" H 4100 3250 50  0000 L CNN
+F 1 "10k" H 4100 3150 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 4050 3200 50  0001 C CNN
+F 3 "~" H 4050 3200 50  0001 C CNN
+	1    4050 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 3300 4050 3350
+Wire Wire Line
+	4050 3350 4100 3350
+$Comp
+L Switch:SW_SPST SW5
+U 1 1 60343167
+P 3750 3350
+F 0 "SW5" H 3750 3585 50  0000 C CNN
+F 1 "SW_RADIO_RST" H 3750 3494 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 3750 3350 50  0001 C CNN
+F 3 "~" H 3750 3350 50  0001 C CNN
+	1    3750 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3350 4050 3350
+Connection ~ 4050 3350
+$Comp
+L power:GND #PWR07
+U 1 1 60343173
+P 3500 3400
+F 0 "#PWR07" H 3500 3150 50  0001 C CNN
+F 1 "GND" H 3600 3300 50  0000 C CNN
+F 2 "" H 3500 3400 50  0001 C CNN
+F 3 "" H 3500 3400 50  0001 C CNN
+	1    3500 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 3350 3500 3350
+Text Notes 3450 2800 0    50   ~ 0
+Radio Reset button
+Wire Notes Line
+	3400 2700 3400 3600
+Wire Notes Line
+	4850 2700 4850 3600
+Wire Wire Line
+	4050 3050 4050 3100
+Text GLabel 4050 3050 1    50   Input ~ 0
+3.3V
+Wire Wire Line
+	3500 3400 3500 3350
+Wire Notes Line
+	3400 2700 4850 2700
+Wire Notes Line
+	3400 3600 4850 3600
+Wire Notes Line
+	3400 1750 4850 1750
+Wire Notes Line
+	3400 2650 4850 2650
+$Comp
+L Connector_Generic:Conn_01x02 J7
+U 1 1 603EC8E3
+P 700 3100
+F 0 "J7" H 700 3200 50  0000 C CNN
+F 1 "BATT" H 700 2900 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 700 3100 50  0001 C CNN
+F 3 "~" H 700 3100 50  0001 C CNN
+	1    700  3100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	950  2950 1000 2950
+Wire Wire Line
+	900  3000 950  3000
+Wire Wire Line
+	950  3000 950  2950
+Wire Wire Line
+	900  3100 950  3100
+Wire Wire Line
+	950  3100 950  3150
+Text GLabel 4800 6500 2    50   Input ~ 0
+RADIO_TX
+Text GLabel 5350 3100 2    50   Input ~ 0
+RADIO_TX
+Text GLabel 5350 2900 2    50   Input ~ 0
+MAIN_TX
+$Comp
+L Connector_Generic:Conn_01x03 J9
+U 1 1 604FE046
+P 5150 3000
+F 0 "J9" H 5150 3300 50  0000 C CNN
+F 1 "MCU_TX" H 5100 3200 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 5150 3000 50  0001 C CNN
+F 3 "~" H 5150 3000 50  0001 C CNN
+	1    5150 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 604FF2AC
+P 5850 3050
+F 0 "#PWR0102" H 5850 2800 50  0001 C CNN
+F 1 "GND" H 5700 2950 50  0000 C CNN
+F 2 "" H 5850 3050 50  0001 C CNN
+F 3 "" H 5850 3050 50  0001 C CNN
+	1    5850 3050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 3000 5850 3050
+Wire Wire Line
+	5350 3000 5850 3000
+Text Notes 4950 2800 0    50   ~ 0
+MCU UART TX
+Wire Notes Line
+	4900 2700 6100 2700
+Wire Notes Line
+	6100 2700 6100 3350
+Wire Notes Line
+	6100 3350 4900 3350
+Wire Notes Line
+	4900 3350 4900 2700
 $EndSCHEMATC

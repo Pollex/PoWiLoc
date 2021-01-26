@@ -1,4 +1,4 @@
-update=01/25/21 20:18:23
+update=01/27/21 00:00:22
 version=1
 last_client=kicad
 [general]
@@ -212,7 +212,7 @@ Enabled=0
 [pcbnew/Layer.F.Paste]
 Enabled=1
 [pcbnew/Layer.B.SilkS]
-Enabled=0
+Enabled=1
 [pcbnew/Layer.F.SilkS]
 Enabled=1
 [pcbnew/Layer.B.Mask]
