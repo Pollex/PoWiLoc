@@ -200,13 +200,13 @@ F 3 "" H 9300 1100 50  0001 C CNN
 	1    9300 1150
 	1    0    0    -1  
 $EndComp
-Text GLabel 2400 6600 2    50   Input ~ 0
-USB_D+
 Text GLabel 2400 6700 2    50   Input ~ 0
-USB_D-
-Text GLabel 8350 1450 0    50   Input ~ 0
 USB_D+
-Text GLabel 8350 1350 0    50   Input ~ 0
+Text GLabel 2400 6600 2    50   Input ~ 0
+USB_D-
+Text GLabel 8300 1450 0    50   Input ~ 0
+USB_D+
+Text GLabel 8300 1350 0    50   Input ~ 0
 USB_D-
 Wire Wire Line
 	8900 1250 8950 1250
@@ -267,12 +267,12 @@ $EndComp
 $Comp
 L Device:R_Small R5
 U 1 1 60106E17
-P 8500 1450
-F 0 "R5" V 8400 1400 50  0000 C CNN
-F 1 "68" V 8400 1550 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 8500 1450 50  0001 C CNN
-F 3 "~" H 8500 1450 50  0001 C CNN
-	1    8500 1450
+P 8450 1450
+F 0 "R5" V 8350 1400 50  0000 C CNN
+F 1 "68" V 8350 1550 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 8450 1450 50  0001 C CNN
+F 3 "~" H 8450 1450 50  0001 C CNN
+	1    8450 1450
 	0    1    -1   0   
 $EndComp
 Text GLabel 7800 1150 1    50   Input ~ 0
@@ -280,18 +280,18 @@ VBUS
 $Comp
 L Device:R_Small R4
 U 1 1 6012B34F
-P 8500 1350
-F 0 "R4" V 8400 1300 50  0000 C CNN
-F 1 "68" V 8400 1450 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 8500 1350 50  0001 C CNN
-F 3 "~" H 8500 1350 50  0001 C CNN
-	1    8500 1350
+P 8450 1350
+F 0 "R4" V 8350 1300 50  0000 C CNN
+F 1 "68" V 8350 1450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 8450 1350 50  0001 C CNN
+F 3 "~" H 8450 1350 50  0001 C CNN
+	1    8450 1350
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	8400 1350 8350 1350
+	8350 1350 8300 1350
 Wire Wire Line
-	8350 1450 8400 1450
+	8300 1450 8350 1450
 Wire Wire Line
 	8900 1250 8900 1200
 Wire Wire Line
@@ -326,7 +326,7 @@ $EndComp
 Wire Wire Line
 	8750 850  8750 900 
 Wire Wire Line
-	7800 1200 8900 1200
+	7800 1200 8400 1200
 Wire Notes Line
 	7500 2000 9550 2000
 Wire Notes Line
@@ -408,13 +408,6 @@ Text GLabel 1550 4050 1    50   Input ~ 0
 3.3V
 Wire Wire Line
 	8750 1100 8750 1350
-Wire Wire Line
-	8600 1350 8750 1350
-Connection ~ 8750 1350
-Wire Wire Line
-	8750 1350 8950 1350
-Wire Wire Line
-	8600 1450 8950 1450
 $Comp
 L Device:C_Small C6
 U 1 1 600C8882
@@ -708,7 +701,7 @@ Wire Notes Line
 Text GLabel 7750 5200 2    50   Input ~ 0
 RADIO_DIO5
 Wire Wire Line
-	7750 5000 8150 5000
+	7750 5000 7850 5000
 Text GLabel 4800 5800 2    50   Input ~ 0
 RADIO_DIO5
 Text GLabel 5500 2100 1    50   Input ~ 0
@@ -756,19 +749,6 @@ Text Notes 5500 1850 2    50   ~ 0
 Trigger button
 Wire Notes Line
 	4900 1750 6000 1750
-$Comp
-L Connector_Generic:Conn_01x02 J1
-U 1 1 60157CEE
-P 1050 1000
-F 0 "J1" V 1100 1100 50  0000 L BNN
-F 1 "SW_PWR_BAT" V 1000 1050 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1050 1000 50  0001 C CNN
-F 3 "~" H 1050 1000 50  0001 C CNN
-	1    1050 1000
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	1150 1200 1500 1200
 $Comp
 L Device:C_Small C1
 U 1 1 6016CA3C
@@ -1085,7 +1065,7 @@ Peripheral\nConnectors*
 Wire Notes Line
 	9450 2050 11150 2050
 Wire Notes Line
-	11150 3000 9450 3000
+	11150 3450 9450 3450
 NoConn ~ 7750 5300
 NoConn ~ 7750 5400
 NoConn ~ 4800 5300
@@ -1150,8 +1130,6 @@ F 3 "~" H 1000 2950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	850  1200 1050 1200
-Wire Wire Line
 	1000 2950 1050 2950
 Connection ~ 1000 2950
 Text Notes 600  2800 0    50   ~ 0
@@ -1214,10 +1192,6 @@ Wire Wire Line
 	7800 1500 7800 1600
 Wire Wire Line
 	8950 1550 8900 1550
-Wire Wire Line
-	8900 1550 8900 1600
-Wire Wire Line
-	8900 1600 7800 1600
 Connection ~ 7800 1600
 Wire Wire Line
 	7800 1600 7800 1650
@@ -1237,10 +1211,6 @@ Wire Wire Line
 Wire Wire Line
 	1000 3150 1050 3150
 Connection ~ 1000 3150
-Wire Notes Line
-	9450 2050 9450 3000
-Wire Notes Line
-	11150 3000 11150 2050
 $Comp
 L Switch:SW_SPST SW4
 U 1 1 6024A7E5
@@ -1426,4 +1396,157 @@ Wire Notes Line
 	6100 3350 4900 3350
 Wire Notes Line
 	4900 3350 4900 2700
+Wire Wire Line
+	850  1200 1500 1200
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J1
+U 1 1 605D268F
+P 10200 3150
+F 0 "J1" H 10250 3467 50  0000 C CNN
+F 1 "periph_conn_2" H 10250 3376 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 10200 3150 50  0001 C CNN
+F 3 "~" H 10200 3150 50  0001 C CNN
+	1    10200 3150
+	1    0    0    -1  
+$EndComp
+Text GLabel 10000 3050 0    50   Input ~ 0
+3.3V
+$Comp
+L power:GND #PWR09
+U 1 1 605D2C8C
+P 9550 3200
+F 0 "#PWR09" H 9550 2950 50  0001 C CNN
+F 1 "GND" H 9555 3027 50  0000 C CNN
+F 2 "" H 9550 3200 50  0001 C CNN
+F 3 "" H 9550 3200 50  0001 C CNN
+	1    9550 3200
+	1    0    0    -1  
+$EndComp
+Text GLabel 10500 3250 2    50   Input ~ 0
+I2C_SCL
+Text GLabel 10500 3150 2    50   Input ~ 0
+I2C_SDA
+Text GLabel 10500 3050 2    50   Input ~ 0
+I2C_SMBALERT
+Text GLabel 10000 3250 0    50   Input ~ 0
+3.3V_SW
+Wire Wire Line
+	9550 3150 10000 3150
+Wire Wire Line
+	9550 3200 9550 3150
+Wire Notes Line
+	9450 2050 9450 3450
+Wire Notes Line
+	11150 2050 11150 3450
+$Comp
+L pollex-logo:LOGO #G1
+U 1 1 606E97B4
+P 10450 6900
+F 0 "#G1" H 10450 6780 60  0001 C CNN
+F 1 "LOGO" H 10450 7020 60  0001 C CNN
+F 2 "" H 10450 6900 50  0001 C CNN
+F 3 "" H 10450 6900 50  0001 C CNN
+	1    10450 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small #LOGO1
+U 1 1 606ECD78
+P 9200 6900
+F 0 "#LOGO1" H 9200 7175 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 9200 6675 50  0001 C CNN
+F 2 "" H 9200 6900 50  0001 C CNN
+F 3 "~" H 9200 6900 50  0001 C CNN
+	1    9200 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L powiloc-custom:taper T5
+U 1 1 6077932E
+P 7850 4900
+F 0 "T5" H 7950 5050 50  0001 C CNN
+F 1 "taper" H 7800 5050 50  0000 L CNN
+F 2 "powiloc-custom:uwT0.50_0.40_1.00_1.46_1.20" H 8000 5000 50  0001 C CNN
+F 3 "" H 7900 4850 50  0001 C CNN
+	1    7850 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 4900 7850 5000
+Connection ~ 7850 5000
+Wire Wire Line
+	7850 5000 8150 5000
+$Comp
+L powiloc-custom:taper T4
+U 1 1 60782203
+P 8850 1700
+F 0 "T4" H 8950 1850 50  0001 C CNN
+F 1 "taper" H 8800 1850 50  0000 L CNN
+F 2 "powiloc-custom:uwT0.50_0.15_1.00_1.24_3.00" H 9000 1800 50  0001 C CNN
+F 3 "" H 8900 1650 50  0001 C CNN
+	1    8850 1700
+	-1   0    0    1   
+$EndComp
+$Comp
+L powiloc-custom:taper T2
+U 1 1 60791D80
+P 8250 1700
+F 0 "T2" H 8350 1850 50  0001 C CNN
+F 1 "taper" H 8200 1850 50  0000 L CNN
+F 2 "powiloc-custom:uwT0.50_0.40_1.00_1.46_1.20" H 8400 1800 50  0001 C CNN
+F 3 "" H 8300 1650 50  0001 C CNN
+	1    8250 1700
+	-1   0    0    1   
+$EndComp
+$Comp
+L powiloc-custom:taper T1
+U 1 1 60791FFC
+P 8400 1100
+F 0 "T1" H 8500 1250 50  0001 C CNN
+F 1 "taper" H 8350 1250 50  0000 L CNN
+F 2 "powiloc-custom:uwT0.50_0.40_1.00_1.46_1.20" H 8550 1200 50  0001 C CNN
+F 3 "" H 8450 1050 50  0001 C CNN
+	1    8400 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 1100 8400 1200
+Connection ~ 8400 1200
+Wire Wire Line
+	8400 1200 8900 1200
+Wire Wire Line
+	7800 1600 8250 1600
+Wire Wire Line
+	8250 1700 8250 1600
+Wire Wire Line
+	8550 1700 8550 1450
+Connection ~ 8550 1450
+Wire Wire Line
+	8750 1350 8850 1350
+Wire Wire Line
+	8900 1550 8900 1600
+Connection ~ 8250 1600
+Wire Wire Line
+	8250 1600 8900 1600
+Wire Wire Line
+	8550 1350 8750 1350
+Connection ~ 8750 1350
+$Comp
+L powiloc-custom:taper T3
+U 1 1 60783E09
+P 8550 1700
+F 0 "T3" H 8650 1850 50  0001 C CNN
+F 1 "taper" H 8500 1850 50  0000 L CNN
+F 2 "powiloc-custom:uwT0.50_0.15_1.00_1.24_3.00" H 8700 1800 50  0001 C CNN
+F 3 "" H 8600 1650 50  0001 C CNN
+	1    8550 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8550 1450 8950 1450
+Wire Wire Line
+	8850 1700 8850 1350
+Connection ~ 8850 1350
+Wire Wire Line
+	8850 1350 8950 1350
 $EndSCHEMATC

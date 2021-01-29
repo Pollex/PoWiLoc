@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name powiloc-custom)(type Legacy)(uri ${KIPRJMOD}/powiloc-custom.lib)(options "")(descr ""))
+  (lib (name pollex-logo)(type Legacy)(uri //wsl$/UbuntuD/home/timvosch/src/mfm-micro/hardware/lib/pollex-logo.lib)(options "")(descr ""))
 )
