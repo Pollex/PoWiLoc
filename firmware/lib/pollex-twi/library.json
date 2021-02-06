@@ -1,0 +1,6 @@
+{
+  "name": "pollex-twi",
+  "platforms": [
+    "atmelavr"
+  ]
+}

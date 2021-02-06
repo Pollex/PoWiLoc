@@ -1,0 +1,11 @@
+{
+  "name": "pollex-smbus",
+  "platforms": [
+    "atmelavr"
+  ],
+  "dependencies": [
+    {
+      "name": "pollex-twi"
+    }
+  ]
+}
